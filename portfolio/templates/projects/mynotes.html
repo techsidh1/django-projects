@@ -1,0 +1,38 @@
+
+
+
+<h1> My Notes </h1>
+
+
+<div style="text-align: center;">
+
+ {% for note in notes %}
+
+    <h2>
+     
+      <a href='{{ note.get_absolute_url }}'>
+     {{ note.title}}
+      </a>
+    </h2>
+
+   <p>{{ note.content | truncatechars:150 }}</p>
+
+    <h6>{{ note.created_at | date:'M d Y' }}</h6>
+
+    <br/>   
+
+        {% for tag in note.tags.all %} 
+             <a href="{% url 'mynotes' %}?tag={{tag}}">
+              {{tag}} 
+             </a> &nbsp;
+
+        {% endfor %}
+    
+
+
+
+    <hr/>
+
+
+ {% endfor %}
+</div>

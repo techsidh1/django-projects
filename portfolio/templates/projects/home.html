@@ -1,0 +1,126 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Siddharth</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+
+
+    
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        {% for p in person %}
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <img src="{{ p.image.url }}" width='350' />
+        <h1 class="fw-light">{{ p.name }}</h1>
+        <p class="lead text-muted"> {{ p.about_me }}<p>
+          <a href="{{ p.github}}" class="btn btn-primary my-2">GitHub</a>
+          <a href="{{ p.linkedin}}" class="btn btn-secondary my-2">LinkedIn</a>
+          <a href="{{ p.linkedin}}" class="btn btn-secondary my-2">Email</a>
+          <a href="#projects" class="btn btn-secondary my-2">Projects</a>
+        </p>
+        <h5> {{ p.tech_skills  }} </h5>
+      </div>
+      {% endfor %}
+      <a href='{% url 'mynotes' %} '>MyNotes</a>
+    </div>
+  </section>
+
+  
+
+
+
+
+
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id='projects'>
+        {% for project in projects %}
+        <div class="col m-1">
+            
+          <div class="card shadow-sm " style="width: 20rem">
+
+            <img src='{{ project.image.url }}' class="card-img-top" width="" height="250"  alt="img">
+            <div class="card-body" >
+              <h2 class="card-text">{{ project.title }}</h2>
+              <p class="card-text">{{ project.description}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="{{ project.github_link}}" type="button" class="btn btn-sm btn-outline-secondary">View</a>
+                  <a href="{{ project.live_demo}}"  type="button" class="btn btn-sm btn-outline-secondary">Edit</a>
+                </div>
+               
+               
+              </div>
+            </div>
+          </div>
+          </div>
+          
+      
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+    </main>
+
+
+
+
+    <footer class="text-muted py-5">
+        <div class="container">
+          <p class="float-end mb-1">
+            <a href="#">Back to top</a>
+          </p>
+          <p class="mb-1">Siddharth &copy; </p>
+          </div>
+      </footer>
+      
+      
+          <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+      
+</body>
+
+</html>
+
+
+ 
+
+
+
+    
+
+        
